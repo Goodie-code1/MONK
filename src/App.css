@@ -1,0 +1,371 @@
+import { useState } from "react";
+import monkeyMan from "./assets/monkey-man.png";
+import "./index.css";
+
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const contractAddress =
+    "3eRXDT4AxzNxsxHn7AScsKZv9QeGqXqKovB6XWkLpump";
+
+  const xLink = "https://x.com/MonkeyManMONKme";
+  const telegramLink = "https://t.me/themonkgroup";
+
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+
+    setMenuOpen(false);
+  };
+
+  const copyContract = async () => {
+    try {
+      await navigator.clipboard.writeText(contractAddress);
+      setCopied(true);
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
+
+  return (
+    <div className="site">
+      {/* ================= NAVBAR ================= */}
+
+      <header className="navbar">
+        <button
+          className="brand"
+          onClick={() => scrollToSection("home")}
+          aria-label="Go to homepage"
+        >
+          <span className="brand-symbol">M</span>
+          <span className="brand-name">$MONK</span>
+        </button>
+
+        <nav className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
+          <button onClick={() => scrollToSection("about")}>About</button>
+          <button onClick={() => scrollToSection("token")}>Token</button>
+          <button onClick={() => scrollToSection("community")}>
+            Community
+          </button>
+
+          <button
+            className="mobile-nav-cta"
+            onClick={() => scrollToSection("community")}
+          >
+            Join the Movement
+          </button>
+        </nav>
+
+        <button
+          className="desktop-nav-cta"
+          onClick={() => scrollToSection("community")}
+        >
+          Join the Movement
+        </button>
+
+        <button
+          className={`menu-button ${menuOpen ? "menu-active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Open navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </header>
+
+      {/* ================= HERO ================= */}
+
+      <section id="home" className="hero">
+        <div className="hero-background-grid" />
+        <div className="hero-purple-glow hero-purple-glow-one" />
+        <div className="hero-purple-glow hero-purple-glow-two" />
+
+        <div className="hero-content">
+          <div className="solana-badge">
+            <span className="solana-indicator" />
+            BUILT ON SOLANA
+          </div>
+
+          <p className="hero-eyebrow">THE LEGEND MOVEMENT</p>
+
+          <h1 className="hero-title">
+            BECOME
+            <span>A LEGEND.</span>
+          </h1>
+
+          <p className="hero-subtitle">
+            Together we build.
+            <br />
+            Together we moon.
+          </p>
+
+          <div className="hero-buttons">
+            <a
+              href={`https://pump.fun/coin/${contractAddress}`}
+              target="_blank"
+              rel="noreferrer"
+              className="button button-primary"
+            >
+              BUY $MONK
+              <span>↗</span>
+            </a>
+
+            <button
+              className="button button-secondary"
+              onClick={() => scrollToSection("community")}
+            >
+              JOIN THE MOVEMENT
+              <span>→</span>
+            </button>
+          </div>
+
+          <div className="hero-contract">
+            <span className="ca-label">CA</span>
+            <span>{contractAddress}</span>
+          </div>
+        </div>
+
+        <div className="hero-art">
+          <div className="art-orbit art-orbit-one" />
+          <div className="art-orbit art-orbit-two" />
+
+          <div className="art-glow" />
+
+          <img
+            src={monkeyMan}
+            alt="Monkey Man - $MONK"
+            className="monkey-image"
+          />
+
+          <div className="art-label">
+            <span>MONKEY MAN</span>
+            <strong>$MONK</strong>
+          </div>
+        </div>
+
+        <button
+          className="scroll-indicator"
+          onClick={() => scrollToSection("about")}
+        >
+          <span>SCROLL TO EXPLORE</span>
+          <span className="scroll-arrow">↓</span>
+        </button>
+      </section>
+
+      {/* ================= ABOUT ================= */}
+
+      <section id="about" className="about section">
+        <div className="section-container about-container">
+          <div className="section-heading">
+            <p className="section-number">01 / ABOUT</p>
+
+            <h2>
+              MORE THAN
+              <span>A MEME.</span>
+            </h2>
+          </div>
+
+          <div className="about-content">
+            <p className="about-lead">
+              Monkey Man <span>($MONK)</span> is a community-driven memecoin
+              on Solana built around the Legend movement.
+            </p>
+
+            <p className="about-text">
+              We believe success means more when everyone rises together. No
+              complicated promises — just a community of monkeys building,
+              believing, and moving forward.
+            </p>
+
+            <div className="about-note">
+              <span className="note-line" />
+
+              <p>
+                The project has shared its intention to support monkey
+                conservation efforts, with fees going toward helping save
+                monkeys via the African Wildlife Foundation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= TOKEN ================= */}
+
+      <section id="token" className="token section">
+        <div className="token-background-glow" />
+
+        <div className="section-container">
+          <div className="section-heading token-heading">
+            <p className="section-number">02 / TOKEN</p>
+
+            <h2>
+              KNOW THE
+              <span>LEGEND.</span>
+            </h2>
+          </div>
+
+          <div className="token-card">
+            <div className="token-card-top">
+              <div>
+                <p className="card-label">TOKEN INFORMATION</p>
+                <h3>MONKEY MAN</h3>
+              </div>
+
+              <div className="token-symbol">$MONK</div>
+            </div>
+
+            <div className="token-details">
+              <div className="token-detail">
+                <span>Name</span>
+                <strong>Monkey Man</strong>
+              </div>
+
+              <div className="token-detail">
+                <span>Ticker</span>
+                <strong>$MONK</strong>
+              </div>
+
+              <div className="token-detail">
+                <span>Network</span>
+                <strong>Solana</strong>
+              </div>
+
+              <div className="token-detail token-contract">
+                <span>Contract Address</span>
+
+                <div className="contract-row">
+                  <strong>{contractAddress}</strong>
+
+                  <button
+                    className="copy-button"
+                    onClick={copyContract}
+                    title="Copy contract address"
+                  >
+                    {copied ? "COPIED" : "COPY"}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="token-card-bottom">
+              <span>MONKEY MAN / $MONK</span>
+              <span>SOLANA</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= COMMUNITY ================= */}
+
+      <section id="community" className="community section">
+        <div className="community-background" />
+
+        <div className="community-art">
+          <div className="community-orb community-orb-one" />
+          <div className="community-orb community-orb-two" />
+
+          <img
+            src={monkeyMan}
+            alt="Monkey Man community"
+            className="community-monkey"
+          />
+        </div>
+
+        <div className="section-container community-container">
+          <div className="community-content">
+            <p className="section-number">03 / COMMUNITY</p>
+
+            <h2>
+              TOGETHER
+              <span>WE BUILD.</span>
+              <span>WE WIN.</span>
+            </h2>
+
+            <p className="community-message">
+              Be the reason another monkey believes in tomorrow.
+            </p>
+
+            <p className="community-subtext">
+              We rise by lifting others.
+            </p>
+
+            <div className="community-buttons">
+              <a
+                href={telegramLink}
+                target="_blank"
+                rel="noreferrer"
+                className="social-button telegram-button"
+              >
+                <span className="social-icon">✈</span>
+                TELEGRAM
+                <span>↗</span>
+              </a>
+
+              <a
+                href={xLink}
+                target="_blank"
+                rel="noreferrer"
+                className="social-button x-button"
+              >
+                <span className="social-icon">𝕏</span>
+                FOLLOW ON X
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FOOTER ================= */}
+
+      <footer className="footer">
+        <div className="footer-top">
+          <div className="footer-brand">
+            <span className="footer-brand-symbol">M</span>
+
+            <div>
+              <strong>$MONK</strong>
+              <span>MONKEY MAN</span>
+            </div>
+          </div>
+
+          <p className="footer-tagline">LEGEND.</p>
+
+          <div className="footer-links">
+            <a
+              href={telegramLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Telegram
+            </a>
+
+            <a
+              href={xLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              X
+            </a>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>MONKEY MAN — $MONK</span>
+          <span>TOGETHER WE BUILD. TOGETHER WE MOON.</span>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
