@@ -6,12 +6,11 @@
   --surface: #111114;
   --surface-light: #17171b;
 
-  --gold: #ffd700;
-  --gold-light: #ffe66b;
-  --gold-dark: #b99b00;
+  --purple: #A855F7;
+  --purple-light: #C084FC;
+  --purple-dark: #7E22CE;
 
-  --purple: #c026d3;
-  --magenta: #d946ef;
+  --magenta: #D946EF;
 
   --white: #ffffff;
   --muted: #a1a1aa;
@@ -67,7 +66,7 @@ a {
 }
 
 ::selection {
-  background: var(--gold);
+  background: var(--purple);
   color: #000;
 }
 
@@ -98,7 +97,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--gold);
+  color: var(--purple);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -135,7 +134,7 @@ main {
   transform-origin: 0%;
   background: linear-gradient(
     90deg,
-    var(--gold),
+    var(--purple),
     var(--magenta)
   );
   box-shadow: 0 0 14px rgba(255, 215, 0, 0.5);
@@ -189,13 +188,13 @@ main {
 }
 
 .brand-crown {
-  color: var(--gold);
+  color: var(--purple);
   font-size: 1.35rem;
   transform: translateY(-1px);
 }
 
 .brand-gold {
-  color: var(--gold);
+  color: var(--purple);
 }
 
 .desktop-nav {
@@ -217,7 +216,7 @@ main {
 }
 
 .desktop-nav a:hover {
-  color: var(--gold);
+  color: var(--purple);
   transform: translateY(-1px);
 }
 
@@ -245,7 +244,7 @@ main {
 }
 
 .nav-x:hover {
-  color: var(--gold);
+  color: var(--purple);
   border-color: rgba(255, 215, 0, 0.4);
   transform: translateY(-2px);
 }
@@ -254,7 +253,7 @@ main {
   padding: 11px 17px;
 
   color: #050505;
-  background: var(--gold);
+  background: var(--purple);
 
   border-radius: 10px;
 
@@ -392,10 +391,10 @@ main {
   width: 6px;
   height: 6px;
 
-  background: var(--gold);
+  background: var(--purple);
   border-radius: 50%;
 
-  box-shadow: 0 0 10px var(--gold);
+  box-shadow: 0 0 10px var(--purple);
 }
 
 .hero h1 {
@@ -409,7 +408,7 @@ main {
 
 .hero h1 span {
   display: block;
-  color: var(--gold);
+  color: var(--purple);
   text-shadow:
     0 0 35px rgba(255, 215, 0, 0.08);
 }
@@ -462,7 +461,7 @@ main {
 
 .button-gold {
   color: #050505;
-  background: var(--gold);
+  background: var(--purple);
 }
 
 .button-outline {
@@ -560,9 +559,9 @@ main {
   top: 8%;
   left: 18%;
 
-  background: var(--gold);
+  background: var(--purple);
   border-radius: 50%;
-  box-shadow: 0 0 15px var(--gold);
+  box-shadow: 0 0 15px var(--purple);
 }
 
 .hero-monkey {
@@ -621,7 +620,7 @@ main {
 }
 
 .scroll-indicator div {
-  color: var(--gold);
+  color: var(--purple);
   font-size: 1rem;
 }
 
@@ -713,7 +712,7 @@ main {
 
   background: linear-gradient(
     90deg,
-    var(--gold),
+    var(--purple),
     var(--purple),
     transparent
   );
@@ -722,7 +721,7 @@ main {
 .about-number {
   margin-bottom: 30px;
 
-  color: var(--gold);
+  color: var(--purple);
   font-family: "Bebas Neue", sans-serif;
   font-size: 4rem;
   line-height: 1;
@@ -764,7 +763,7 @@ main {
 }
 
 .quote-mark {
-  color: var(--gold);
+  color: var(--purple);
   font-family: Georgia, serif;
   font-size: 7rem;
   line-height: 0.4;
@@ -781,7 +780,7 @@ main {
 
 .about-quote h3 span {
   display: block;
-  color: var(--gold);
+  color: var(--purple);
 }
 
 .quote-line {
@@ -790,7 +789,7 @@ main {
 
   margin-bottom: 18px;
 
-  background: var(--gold);
+  background: var(--purple);
 }
 
 .about-quote p {
@@ -843,7 +842,7 @@ main {
   display: grid;
   place-items: center;
 
-  color: var(--gold);
+  color: var(--purple);
 
   background: rgba(255, 215, 0, 0.07);
 
@@ -930,7 +929,7 @@ main {
   gap: 8px;
 
   color: #050505;
-  background: var(--gold);
+  background: var(--purple);
 
   border-radius: 11px;
 
@@ -967,7 +966,7 @@ main {
 }
 
 .token-note span {
-  color: var(--gold);
+  color: var(--purple);
 }
 
 /* =========================
@@ -1035,7 +1034,7 @@ main {
 }
 
 .gold-eyebrow {
-  color: var(--gold-light);
+  color: var(--purple-light);
 }
 
 .community-content h2 {
@@ -1052,7 +1051,7 @@ main {
 
 .community-content h2 span {
   display: block;
-  color: var(--gold);
+  color: var(--purple);
 }
 
 .community-content p {
@@ -1104,7 +1103,7 @@ main {
 }
 
 .footer-brand span {
-  color: var(--gold);
+  color: var(--purple);
 }
 
 .footer-tagline {
@@ -1121,7 +1120,7 @@ main {
 .footer-legend span {
   display: block;
 
-  color: var(--gold);
+  color: var(--purple);
 
   font-family: "Bebas Neue", sans-serif;
   font-size: 3rem;
@@ -1153,7 +1152,7 @@ main {
 }
 
 .footer-links a:hover {
-  color: var(--gold);
+  color: var(--purple);
 }
 
 .footer-bottom {
@@ -1221,14 +1220,14 @@ main {
 
   .mobile-menu a:hover {
     background: rgba(255, 255, 255, 0.05);
-    color: var(--gold);
+    color: var(--purple);
   }
 
   .mobile-menu .mobile-menu-cta {
     margin-top: 5px;
 
     color: #050505;
-    background: var(--gold);
+    background: var(--purple);
 
     text-align: center;
   }
