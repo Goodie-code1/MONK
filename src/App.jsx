@@ -455,45 +455,61 @@ function TokenInfo() {
         </div>
 
         <motion.div
-          className="contract-card glass-card"
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.75, delay: 0.25 }}
-        >
-          <div className="contract-info">
-            <span className="contract-label">
-              CONTRACT ADDRESS
-            </span>
+  className="contract-card glass-card"
+  initial={{ opacity: 0, y: 35 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.25 }}
+  transition={{ duration: 0.75, delay: 0.25 }}
+>
+  <div className="contract-monkey">
+    <motion.img
+      src={heroImage}
+      alt="Monkey Man"
+      animate={{
+        y: [0, -5, 0],
+        rotate: [-1, 1, -1],
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
+  </div>
 
-            <div className="contract-value">
-              <span className="desktop-contract">{CONTRACT}</span>
-              <span className="mobile-contract">{shortenedCA}</span>
-            </div>
+  <div className="contract-info">
+    <span className="contract-label">
+      CONTRACT ADDRESS
+    </span>
 
-            <span className="contract-network">
-              Solana / Pump-style address
-            </span>
-          </div>
+    <div className="contract-value">
+      <span className="desktop-contract">{CONTRACT}</span>
+      <span className="mobile-contract">{shortenedCA}</span>
+    </div>
 
-          <motion.button
-            className={`copy-button ${copied ? "copied" : ""}`}
-            onClick={copyContract}
-            whileTap={{ scale: 0.95 }}
-          >
-            {copied ? (
-              <>
-                <span>✓</span>
-                COPIED
-              </>
-            ) : (
-              <>
-                <span>⧉</span>
-                COPY CA
-              </>
-            )}
-          </motion.button>
-        </motion.div>
+    <span className="contract-network">
+      Solana / Pump-style address
+    </span>
+  </div>
+
+  <motion.button
+    className={`copy-button ${copied ? "copied" : ""}`}
+    onClick={copyContract}
+    whileTap={{ scale: 0.95 }}
+  >
+    {copied ? (
+      <>
+        <span>✓</span>
+        COPIED
+      </>
+    ) : (
+      <>
+        <span>⧉</span>
+        COPY CA
+      </>
+    )}
+  </motion.button>
+</motion.div>
 
         <div className="token-note">
           <span>ⓘ</span>

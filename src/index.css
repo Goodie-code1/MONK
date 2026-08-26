@@ -963,21 +963,76 @@ main {
 }
 
 .contract-card {
+  position: relative;
   margin-top: 16px;
   padding: 26px 28px;
-
+  min-height: 150px;
   border-radius: 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 25px;
+  overflow: hidden;
+}
+
+.contract-monkey {
+  position: relative;
+  flex-shrink: 0;
+  width: 105px;
+  height: 105px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(168, 85, 247, 0.22),
+      rgba(168, 85, 247, 0.04) 65%,
+      transparent 70%
+    );
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow:
+    0 0 35px rgba(168, 85, 247, 0.12),
+    inset 0 0 25px rgba(168, 85, 247, 0.08);
+}
+
+.contract-monkey::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: 50%;
+  animation: contractMonkeyGlow 3s ease-in-out infinite;
+}
+
+.contract-monkey img {
+  position: relative;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 8px 15px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 18px rgba(168, 85, 247, 0.2));
+}
+
+@keyframes contractMonkeyGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
 }
 
 .contract-info {
   min-width: 0;
+  flex: 1;
 }
-
 .contract-label {
   display: block;
 
@@ -1511,10 +1566,33 @@ main {
   }
 
   .contract-card {
-    align-items: stretch;
-    flex-direction: column;
-    padding: 23px;
-  }
+  align-items: center;
+  flex-direction: column;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.contract-monkey {
+  width: 90px;
+  height: 90px;
+}
+
+.contract-monkey img {
+  width: 86px;
+  height: 86px;
+}
+
+.contract-info {
+  width: 100%;
+}
+
+.contract-value {
+  text-align: center;
+}
+
+.contract-network {
+  text-align: center;
+}
 
   .desktop-contract {
     display: none;
