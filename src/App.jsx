@@ -8,6 +8,7 @@ import {
 
 import heroImage from "./assets/monk-hero.png";
 import communityImage from "./assets/monk-community.png";
+import missionImage from "./assets/monk-saves.png";
 
 const CONTRACT =
   "3eRXDT4AxzNxsxHn7AScsKZv9QeGqXqKovB6XWkLpump";
@@ -19,6 +20,7 @@ const BUY_URL = `https://pump.fun/coin/${CONTRACT}`;
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Token", href: "#token" },
+  { label: "Mission", href: "#mission" },
   { label: "Community", href: "#community" },
 ];
 
@@ -521,6 +523,64 @@ function TokenInfo() {
   );
 }
 
+function Mission() {
+  return (
+    <section id="mission" className="section mission-section">
+      <div className="section-container">
+        <motion.div
+          className="mission-card glass-card"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="mission-content">
+            <span className="section-eyebrow">
+              03 / THE MISSION
+            </span>
+
+            <h2>
+              MEMES
+              <span>WITH A PURPOSE.</span>
+            </h2>
+
+            <p>
+              Monkey Man isn't just about the movement. It's about
+              making an impact beyond the blockchain.
+            </p>
+
+            <div className="mission-highlight">
+              <strong>50%</strong>
+
+              <span>
+                OF FEES GOES TO AFRICAN WILDLIFE FOUNDATION.
+              </span>
+            </div>
+
+            <p className="mission-description">
+              50% of fees are dedicated to supporting the African
+              Wildlife Foundation and its conservation efforts.
+            </p>
+          </div>
+
+          <motion.div
+  className="mission-symbol"
+  initial={{ opacity: 0, scale: 0.85 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.8, delay: 0.15 }}
+>
+  <img
+    src={missionImage}
+    alt="Monkey Man supporting other monkeys"
+  />
+</motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function Community() {
   return (
     <section id="community" className="community-section">
@@ -649,10 +709,11 @@ function App() {
       <Navbar />
 
       <main>
-        <Hero />
-        <About />
-        <TokenInfo />
-        <Community />
+      <Hero />
+<About />
+<TokenInfo />
+<Mission />
+<Community />
       </main>
 
       <Footer />

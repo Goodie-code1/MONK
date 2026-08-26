@@ -1119,6 +1119,177 @@ main {
 }
 
 /* =========================
+   MISSION
+========================= */
+
+.mission-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(168, 85, 247, 0.12),
+      transparent 35%
+    ),
+    #080808;
+}
+
+.mission-card {
+  position: relative;
+  min-height: 520px;
+  padding: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.mission-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--purple),
+    var(--magenta),
+    transparent
+  );
+}
+
+.mission-card::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.16),
+    transparent 68%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.mission-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.mission-content h2 {
+  margin: 22px 0 25px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(4rem, 8vw, 7.5rem);
+  line-height: 0.85;
+  letter-spacing: -0.025em;
+}
+
+.mission-content h2 span {
+  display: block;
+  color: var(--purple);
+}
+
+.mission-content > p {
+  max-width: 600px;
+  margin: 0;
+  color: #b9b9bf;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.mission-highlight {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  margin-top: 35px;
+  padding: 25px 28px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: rgba(168, 85, 247, 0.07);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 18px;
+  box-shadow:
+    0 0 35px rgba(168, 85, 247, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.mission-highlight strong {
+  flex-shrink: 0;
+  color: var(--purple);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.5rem;
+  line-height: 0.8;
+  text-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+}
+
+.mission-highlight span {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+}
+
+.mission-description {
+  margin-top: 20px !important;
+  color: var(--muted-dark) !important;
+  font-size: 0.82rem !important;
+}
+
+.mission-symbol {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.035);
+  box-shadow:
+    0 0 60px rgba(168, 85, 247, 0.14),
+    inset 0 0 50px rgba(168, 85, 247, 0.06);
+  overflow: visible;
+}
+
+.mission-symbol img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  filter:
+    drop-shadow(0 20px 35px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 30px rgba(168, 85, 247, 0.18));
+}
+
+.mission-symbol::before,
+.mission-symbol::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(168, 85, 247, 0.12);
+  border-radius: 50%;
+}
+
+.mission-symbol::before {
+  inset: -15px;
+}
+
+.mission-symbol::after {
+  inset: -30px;
+  border-color: rgba(168, 85, 247, 0.07);
+}
+
+/* =========================
    COMMUNITY
 ========================= */
 
@@ -1426,6 +1597,25 @@ main {
     grid-template-columns: 1fr;
   }
 
+    .mission-card {
+    min-height: auto;
+    padding: 45px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 45px;
+  }
+
+  .mission-symbol {
+    width: 130px;
+    height: 130px;
+    align-self: center;
+    font-size: 4.5rem;
+  }
+
+  .mission-highlight {
+    align-items: center;
+  }
+
   .community-section {
     min-height: 700px;
   }
@@ -1608,6 +1798,47 @@ main {
 
   .token-note {
     font-size: 0.63rem;
+  }
+
+    .mission-card {
+    padding: 35px 22px;
+    border-radius: 20px;
+  }
+
+  .mission-content h2 {
+    font-size: clamp(3.8rem, 17vw, 5.5rem);
+  }
+
+  .mission-highlight {
+    padding: 20px;
+    gap: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mission-highlight strong {
+    font-size: 3.8rem;
+  }
+
+  .mission-highlight span {
+    font-size: 0.68rem;
+  }
+
+  .mission-description {
+    font-size: 0.75rem !important;
+  }
+
+  .mission-symbol {
+  width: 180px;
+  height: 180px;
+}
+
+  .mission-symbol::before {
+    inset: -10px;
+  }
+
+  .mission-symbol::after {
+    inset: -20px;
   }
 
   .community-section {
