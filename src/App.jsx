@@ -163,17 +163,69 @@ function Hero() {
       <FloatingCrowns />
 
       <div className="hero-grid">
+
+        {/* CENTER MONKEY IMAGE */}
+        <motion.div
+          className="hero-visual"
+          style={{ y: imageY }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1.1,
+            delay: 0.15,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          <div className="hero-glow" />
+
+          {/* ROTATING CIRCLE */}
+          <motion.div
+            className="hero-ring"
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 35,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+
+          {/* BOUNCING MONKEY */}
+          <motion.img
+            src={heroImage}
+            alt="Monkey Man — Legend"
+            className="hero-monkey"
+            animate={{ y: [0, -18, 0] }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          <div className="hero-corner hero-corner-one" />
+          <div className="hero-corner hero-corner-two" />
+        </motion.div>
+
+        {/* TEXT UNDER THE MONKEY */}
         <motion.div
           className="hero-copy"
-          initial={{ opacity: 0, x: -45 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.3,
+            ease: "easeOut",
+          }}
         >
+
           <motion.div
             className="eyebrow"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.6 }}
+            transition={{
+              delay: 0.45,
+              duration: 0.6,
+            }}
           >
             <span className="eyebrow-dot" />
             THE LEGEND MOVEMENT
@@ -196,6 +248,7 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
+
             <motion.a
               href={BUY_URL}
               target="_blank"
@@ -226,59 +279,26 @@ function Hero() {
               Join The Movement
               <span>→</span>
             </motion.a>
+
           </div>
 
           <div className="hero-meta">
             <span>
               <i /> BUILT ON SOLANA
             </span>
+
             <span className="meta-divider" />
+
             <span>MONKEY MAN / $MONK</span>
           </div>
+
         </motion.div>
 
-        <motion.div
-          className="hero-visual"
-          style={{ y: imageY }}
-          initial={{ opacity: 0, scale: 0.9, x: 35 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{
-            duration: 1.1,
-            delay: 0.15,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-        >
-          <div className="hero-glow" />
-
-          <motion.div
-            className="hero-ring"
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 35,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-
-          <motion.img
-            src={heroImage}
-            alt="Monkey Man — Legend"
-            className="hero-monkey"
-            animate={{ y: [0, -9, 0] }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          <div className="hero-corner hero-corner-one" />
-          <div className="hero-corner hero-corner-two" />
-        </motion.div>
       </div>
 
       <div className="scroll-indicator">
         <span>SCROLL TO EXPLORE</span>
+
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{
@@ -289,6 +309,7 @@ function Hero() {
           ↓
         </motion.div>
       </div>
+
     </section>
   );
 }
